@@ -23,7 +23,7 @@ end
 RegisterNetEvent("uggishresources:client:spawnCars")
 AddEventHandler("uggishresources:client:spawnCars", function()
     if vehiclesSpawned then
-        lib.notify({ title = 'Vehicles have already been spawned.', type = 'error'})
+        lib.notify({ title = 'Vehicles have already been spawned.', type = 'error'}) 
         return
     end
 
@@ -55,7 +55,7 @@ end)
 
 
 RegisterCommand("cars", function()
-    TriggerClientEvent("uggishresources:client:spawnCars")
+    TriggerEvent("uggishresources:client:spawnCars")
 end)
 
 

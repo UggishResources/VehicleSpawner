@@ -23,12 +23,12 @@ end
 RegisterNetEvent("uggishresources:client:spawnCars")
 AddEventHandler("uggishresources:client:spawnCars", function()
     if vehiclesSpawned then
-        print("Vehicles have already been spawned.")
+        lib.notify({ title = 'Vehicles have already been spawned.', type = 'error'})
         return
     end
 
     vehiclesSpawned = true
-    print("Cars Spawned")
+    lib.notify({ title  = 'Cars Spawned', type = 'success'})
 
     for i = 1, #Config.VehicleInfo.VehicleModels do
         local chosenModel = Config.VehicleInfo.VehicleModels[i]
@@ -55,7 +55,7 @@ end)
 
 
 RegisterCommand("cars", function()
-    TriggerEvent("uggishresources:client:spawnCars")
+    TriggerClientEvent("uggishresources:client:spawnCars")
 end)
 
 
